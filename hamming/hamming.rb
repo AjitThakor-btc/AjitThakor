@@ -5,12 +5,8 @@ class Hamming
     str1 = string1.split('')
     str2 = string2.split('')
     count = 0
-    if str1.length!=str2.length
-      raise ArgumentError
-    end
-    if str1 == '' || str2 == ''
-      return 0
-    end
+    raise ArgumentError if str1.length != str2.length
+    return 0 if str1 == '' || str2 == ''
     len = string1.length
     index = 0
     while len >0
@@ -18,6 +14,6 @@ class Hamming
       index += 1
       len -= 1
     end
-    return count
+    count
   end
 end
